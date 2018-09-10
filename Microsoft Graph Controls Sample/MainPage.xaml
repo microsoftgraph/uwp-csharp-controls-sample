@@ -1,0 +1,48 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Microsoft_Graph_Controls_Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls.Graph"
+    x:Class="Microsoft_Graph_Controls_Sample.MainPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="#FF060000">
+            <TextBlock Text="Microsoft Graph Controls" FontSize="60" HorizontalAlignment="Center" />
+            <TextBlock Name="Registration_Warning" Text="Please register your app before signing into Microsoft Graph" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="Black">
+            <Button Name="AadLoginButton" Click="AadLoginButton_Click" Margin="0,0,10,0">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="Assets/AadLogin.png" Height="90" Width="90"></Image>
+                    <TextBlock Text="AadLogin"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="ProfileCardButton" Click="ProfileCardButton_Click" Margin="0,0,10,0">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="Assets/ProfileCard.png" Height="90" Width="90"></Image>
+                    <TextBlock Text="ProfileCard"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="PeoplePickerButton" Click="PeoplePickerButton_Click" Margin="0,0,10,0">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="Assets/PeoplePicker.png" Height="90" Width="90"></Image>
+                    <TextBlock Text="PeoplePicker"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="SharepointButton" Click="SharepointButton_Click" Margin="0,0,10,0">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="Assets/SharePointFileList.png" Height="90" Width="90"></Image>
+                    <TextBlock Text="SharepointFileList"></TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Frame Name="MyFrame">
+            
+        </Frame>
+        
+    </StackPanel>
+</Page>

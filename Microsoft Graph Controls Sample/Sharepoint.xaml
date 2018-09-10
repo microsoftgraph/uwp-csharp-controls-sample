@@ -1,0 +1,25 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Microsoft_Graph_Controls_Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls.Graph"
+    x:Class="Microsoft_Graph_Controls_Sample.Sharepoint"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Vertical" Margin="0,40,0,0">
+        <TextBlock Text="SharepointFileList" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0">
+            <StackPanel Name="loadPanel">
+                <TextBox Name="docLibOrDriveURL" Width="1000" PlaceholderText="Enter Drive or Sharepoint Library URL"/>
+                <Button Name="loadButton" Content="Load Drive"/>
+            </StackPanel>
+            <Custom:SharePointFileList Name="sharePointFilesControl" Height="300" Width="900"/>
+        </StackPanel>
+       
+    </StackPanel>
+
+
+</Page>
