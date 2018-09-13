@@ -45,19 +45,17 @@ namespace Microsoft_Graph_Controls_Sample
         public void initializeControl()
         {
 
-            if (sharePointFilesControl != null && loadPanel != null && docLibOrDriveURL != null && loadButton != null)
+            if (sharePointFilesControl != null && docLibOrDriveURL != null && loadButton != null)
             {
                 loadButton.Click += LoadButton_Click;
 
                 if (!string.IsNullOrEmpty(sharePointFilesControl.DriveUrl))
                 {
                     sharePointFilesControl.Visibility = Visibility.Visible;
-                    loadPanel.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
                     sharePointFilesControl.Visibility = Visibility.Collapsed;
-                    loadPanel.Visibility = Visibility.Visible;
                 }
             }
         }
@@ -73,7 +71,6 @@ namespace Microsoft_Graph_Controls_Sample
             sharePointFilesControl.DriveUrl = driveURL;
 
             sharePointFilesControl.Visibility = Visibility.Visible;
-            loadPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

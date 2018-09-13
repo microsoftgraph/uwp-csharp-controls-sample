@@ -9,8 +9,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel Orientation="Vertical" Margin="0,40,0,0">
-        <TextBlock Text="PeoplePicker " FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <Custom:PeoplePicker Name="PeoplePickerControl" HorizontalAlignment="Center" VerticalAlignment="Center" Width="900" Margin="0,30,0,0"/>
+    <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+        <Custom:PeoplePicker Name="PeoplePickerControl" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" MaxWidth="700" Margin="0,0,0,0" />
     </StackPanel>
 </Page>

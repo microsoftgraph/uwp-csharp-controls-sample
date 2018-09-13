@@ -9,40 +9,64 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="#FF060000">
-            <TextBlock Text="Microsoft Graph Controls" FontSize="60" HorizontalAlignment="Center" />
-            <TextBlock Name="Registration_Warning" Text="Please register your app before signing into Microsoft Graph" HorizontalAlignment="Center"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="Black">
-            <Button Name="AadLoginButton" Click="AadLoginButton_Click" Margin="0,0,10,0">
-                <StackPanel Orientation="Vertical">
-                    <Image Source="Assets/AadLogin.png" Height="90" Width="90"></Image>
-                    <TextBlock Text="AadLogin"></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Name="ProfileCardButton" Click="ProfileCardButton_Click" Margin="0,0,10,0">
-                <StackPanel Orientation="Vertical">
-                    <Image Source="Assets/ProfileCard.png" Height="90" Width="90"></Image>
-                    <TextBlock Text="ProfileCard"></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Name="PeoplePickerButton" Click="PeoplePickerButton_Click" Margin="0,0,10,0">
-                <StackPanel Orientation="Vertical">
-                    <Image Source="Assets/PeoplePicker.png" Height="90" Width="90"></Image>
-                    <TextBlock Text="PeoplePicker"></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Name="SharepointButton" Click="SharepointButton_Click" Margin="0,0,10,0">
-                <StackPanel Orientation="Vertical">
-                    <Image Source="Assets/SharePointFileList.png" Height="90" Width="90"></Image>
-                    <TextBlock Text="SharepointFileList"></TextBlock>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-        <Frame Name="MyFrame">
+    <NavigationView x:Name="NavMain" ItemInvoked="NavMain_ItemInvoked" Header="Azure App ID not set! Save your app ID before proceeding.">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Azure AD Login" x:Name="aadlogin" Tag="aadlogin">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="Globe"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="User Profile Card" x:Name="usrcard" Tag="usrcard">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="ContactInfo"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="People Picker" x:Name="pplpicker" Tag="pplpicker">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="OtherUser"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="SharePoint File List" x:Name="splist" Tag="splist">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="AllApps"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+        <StackPanel>
+            <!--<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="#FF060000" Visibility="Collapsed">
+                <TextBlock Text="Microsoft Graph Controls" FontSize="60" HorizontalAlignment="Center" />
+                <TextBlock Name="Registration_Warning" Text="Please register your app before signing into Microsoft Graph" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="Black">
+                <Button Name="AadLoginButton" Click="AadLoginButton_Click" Margin="0,0,10,0">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/AadLogin.png" Height="90" Width="90"></Image>
+                        <TextBlock Text="AadLogin"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Name="ProfileCardButton" Click="ProfileCardButton_Click" Margin="0,0,10,0">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/ProfileCard.png" Height="90" Width="90"></Image>
+                        <TextBlock Text="ProfileCard"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Name="PeoplePickerButton" Click="PeoplePickerButton_Click" Margin="0,0,10,0">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/PeoplePicker.png" Height="90" Width="90"></Image>
+                        <TextBlock Text="PeoplePicker"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Name="SharepointButton" Click="SharepointButton_Click" Margin="0,0,10,0">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/SharePointFileList.png" Height="90" Width="90"></Image>
+                        <TextBlock Text="SharepointFileList"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>-->
+            <Frame Name="ContentFrame">
             
-        </Frame>
+            </Frame>
         
-    </StackPanel>
+        </StackPanel>
+    </NavigationView>
 </Page>

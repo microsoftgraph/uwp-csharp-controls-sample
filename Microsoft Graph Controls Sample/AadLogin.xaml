@@ -10,17 +10,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     
-    <StackPanel Orientation="Horizontal" Margin="0,30,0,0" HorizontalAlignment="Center">
-        <StackPanel Orientation="Vertical" Width="600" >
-            <TextBlock Text="AadLogin" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Custom:AadLogin Name="AadLoginControl" HorizontalAlignment="Center" Margin="0,30,0,0" View="LargeProfilePhotoRight"/>
-        </StackPanel>
-        <StackPanel Width="600" Background="Azure">
-            <TextBlock Text="Properties" FontSize="40" HorizontalAlignment="Center"></TextBlock>
-
-            <TextBlock Text="View" FontSize="20" Margin="0,20,0,0" FontWeight="Bold" />
-            <ComboBox Name="ViewTypeControl" Width="300" SelectionChanged="ViewTypeControl_SelectionChanged"/>
-
-        </StackPanel>
+    <StackPanel Orientation="Vertical" Width="Auto" Margin="0,0,0,0" HorizontalAlignment="Center">
+        <Custom:AadLogin Name="AadLoginControl" HorizontalAlignment="Center" Margin="0,0,0,0" View="LargeProfilePhotoRight"/>
+        <ComboBox Name="ViewTypeControl" Width="300" SelectionChanged="ViewTypeControl_SelectionChanged" Margin="10,20"/>
     </StackPanel>
 </Page>
