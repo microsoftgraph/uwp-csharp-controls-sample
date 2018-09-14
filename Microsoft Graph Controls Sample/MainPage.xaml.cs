@@ -27,6 +27,9 @@ namespace Microsoft_Graph_Controls_Sample
         {
             this.InitializeComponent();
             checkRegistration();
+
+            // load the help file to the frame
+            ContentFrame.Navigate(typeof(HelpPage));
         }
 
         public void initializGraphService()

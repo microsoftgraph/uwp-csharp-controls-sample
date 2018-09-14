@@ -9,7 +9,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <NavigationView x:Name="NavMain" ItemInvoked="NavMain_ItemInvoked" Header="Azure App ID not set! Save your app ID before proceeding.">
+    <NavigationView x:Name="NavMain" ItemInvoked="NavMain_ItemInvoked">
+        <NavigationView.Header>
+            ⛔Azure App ID not set! Save your app ID before proceeding.⛔
+        </NavigationView.Header>
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Azure AD Login" x:Name="aadlogin" Tag="aadlogin">
                 <NavigationViewItem.Icon>
