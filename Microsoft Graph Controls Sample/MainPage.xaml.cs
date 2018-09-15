@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -30,6 +32,9 @@ namespace Microsoft_Graph_Controls_Sample
 
             // load the help file to the frame
             ContentFrame.Navigate(typeof(HelpPage));
+
+            // see if we can load help doc
+            
         }
 
         public void initializGraphService()
@@ -103,23 +108,55 @@ namespace Microsoft_Graph_Controls_Sample
                 NavMain_Navigate(item as NavigationViewItem);
             }
         }
-        private void NavMain_Navigate(NavigationViewItem item)
+        private async void NavMain_Navigate(NavigationViewItem item)
         {
+            string mdbase = "https://raw.githubusercontent.com/MicrosoftDocs/WindowsCommunityToolkitDocs/master/docs/graph/";
+
+            string mdraw = "";
+
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response = new HttpResponseMessage();            
+
             switch (item.Tag)
             {
+                case "home":
+                    ContentFrame.Navigate(typeof(HelpPage));
+                    mdraw = "";
+                    break;
                 case "aadlogin":
                     ContentFrame.Navigate(typeof(AadLogin));
+                    mdbase += "AadLogin.md";
+                    response = await httpClient.GetAsync(new Uri(mdbase));
+                    mdraw = await response.Content.ReadAsStringAsync();
                     break;
                 case "usrcard":
                     ContentFrame.Navigate(typeof(ProfileCard));
+                    mdbase += "ProfileCard.md";
+                    response = await httpClient.GetAsync(new Uri(mdbase));
+                    mdraw = await response.Content.ReadAsStringAsync();
                     break;
                 case "pplpicker":
                     ContentFrame.Navigate(typeof(PeoplePicker));
+                    mdbase += "PeoplePicker.md";
+                    response = await httpClient.GetAsync(new Uri(mdbase));
+                    mdraw = await response.Content.ReadAsStringAsync();
                     break;
                 case "splist":
                     ContentFrame.Navigate(typeof(Sharepoint));
+                    mdbase += "SharePointFileList.md";
+                    response = await httpClient.GetAsync(new Uri(mdbase));
+                    mdraw = await response.Content.ReadAsStringAsync();
                     break;
             }
+
+            // clean up the markdown text
+            string reg = "---([\\s\\S]*)---";
+            Regex rx = new Regex(reg);
+            mdraw = mdraw.Substring(rx.Match(mdraw).Length);
+
+            mdraw = mdraw.Replace("../", "https://raw.githubusercontent.com/MicrosoftDocs/WindowsCommunityToolkitDocs/master/docs/");
+
+            MdbReadme.Text = mdraw;
         }
     }
 }

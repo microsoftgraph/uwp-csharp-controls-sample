@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page xmlns:my="using:Microsoft.Toolkit.Uwp.UI.Controls" 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Microsoft_Graph_Controls_Sample"
@@ -9,11 +9,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <NavigationView x:Name="NavMain" ItemInvoked="NavMain_ItemInvoked">
-        <NavigationView.Header>
-            ⛔Azure App ID not set! Save your app ID before proceeding.⛔
-        </NavigationView.Header>
+    <NavigationView x:Name="NavMain" ItemInvoked="NavMain_ItemInvoked" AlwaysShowHeader="False" Header="⛔Azure App ID not set! Save your app ID before proceeding.⛔">
         <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home" x:Name="home" Tag="home">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="Home"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItemSeparator/>
             <NavigationViewItem Content="Azure AD Login" x:Name="aadlogin" Tag="aadlogin">
                 <NavigationViewItem.Icon>
                     <SymbolIcon Symbol="Globe"/>
@@ -35,41 +38,22 @@
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
         </NavigationView.MenuItems>
-        <StackPanel>
-            <!--<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="#FF060000" Visibility="Collapsed">
-                <TextBlock Text="Microsoft Graph Controls" FontSize="60" HorizontalAlignment="Center" />
-                <TextBlock Name="Registration_Warning" Text="Please register your app before signing into Microsoft Graph" HorizontalAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0" BorderBrush="Black">
-                <Button Name="AadLoginButton" Click="AadLoginButton_Click" Margin="0,0,10,0">
-                    <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/AadLogin.png" Height="90" Width="90"></Image>
-                        <TextBlock Text="AadLogin"></TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Name="ProfileCardButton" Click="ProfileCardButton_Click" Margin="0,0,10,0">
-                    <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/ProfileCard.png" Height="90" Width="90"></Image>
-                        <TextBlock Text="ProfileCard"></TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Name="PeoplePickerButton" Click="PeoplePickerButton_Click" Margin="0,0,10,0">
-                    <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/PeoplePicker.png" Height="90" Width="90"></Image>
-                        <TextBlock Text="PeoplePicker"></TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Name="SharepointButton" Click="SharepointButton_Click" Margin="0,0,10,0">
-                    <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/SharePointFileList.png" Height="90" Width="90"></Image>
-                        <TextBlock Text="SharepointFileList"></TextBlock>
-                    </StackPanel>
-                </Button>
-            </StackPanel>-->
-            <Frame Name="ContentFrame">
-            
-            </Frame>
-        
-        </StackPanel>
+        <Grid x:Name="GrdBase">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto" Grid.Column="0" Margin="20 20 0 0">
+                <Frame Name="ContentFrame"></Frame>
+            </ScrollViewer>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto" Grid.Column="1" Margin="10 20">
+                <my:MarkdownTextBlock x:Name="MdbReadme" Grid.Column="1" Margin="30 10 10 10"  />
+            </ScrollViewer>
+
+            <my:GridSplitter x:Name="Splitter" Width="11" HorizontalAlignment="Left" Grid.Column="1" ResizeBehavior="BasedOnAlignment" Background="Transparent" GripperForeground="{ThemeResource AppBarItemForegroundThemeBrush}">
+            </my:GridSplitter>
+        </Grid>
     </NavigationView>
 </Page>
