@@ -9,18 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="Microsoft Converged App Client ID:" Width="320" HorizontalAlignment="Left" Margin="80,80,0,887" FontSize="20" VerticalAlignment="Stretch"/>
+        <TextBlock Text="Microsoft Converged App Client ID:" Width="320" HorizontalAlignment="Left" Margin="31,39,0,928" FontSize="20"/>
         <TextBox x:Name="TxtClientID" 
                  HorizontalAlignment="Left" 
                  FontFamily="Consolas"
                  VerticalAlignment="Top" 
-                 Margin="80,120,0,0" 
+                 Margin="31,79,0,0" 
                  Width="415" 
                  Padding="10" 
                  MaxLength="36"
                  TextChanged="TxtClientID_TextChanged" />
-        <Button x:Name="BtnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,178,0,0" Click="BtnSave_Click" />
-        <TextBlock x:Name="TxbValid" HorizontalAlignment="Left" Margin="515,131,0,0" Text="❌ App ID is not valid." TextWrapping="Wrap" VerticalAlignment="Top" Width="419" />
+        <Button x:Name="BtnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,168,0,0" Click="BtnSave_Click" />
+        <TextBlock x:Name="TxbValid" HorizontalAlignment="Left" Margin="31,126,0,0" Text="❌ App ID is not valid." TextWrapping="Wrap" VerticalAlignment="Top" Width="419" />
 
     </Grid>
 </Page>

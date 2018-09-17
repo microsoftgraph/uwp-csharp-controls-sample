@@ -41,9 +41,15 @@ namespace Microsoft_Graph_Controls_Sample
             Regex regex = new Regex("([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})");
 
             if (regex.Match(TxtClientID.Text).Success)
+            {
                 TxbValid.Text = "✔ App ID is valid.";
+                BtnSave.IsEnabled = true;
+            }
             else
+            {
                 TxbValid.Text = "❌ App ID is not valid.";
+                BtnSave.IsEnabled = false;
+            }
         }
     }
 }
