@@ -15,8 +15,20 @@ namespace Microsoft_Graph_Controls_Sample
         public SettingsPage()
         {
             this.InitializeComponent();
+
+            TxtClientID.Focus(FocusState.Programmatic);
+
             TxtClientID.Text = ApplicationData.Current.LocalSettings.Values["ClientID"].ToString();
-            CheckAppID();
+            if (CheckAppID(TxtClientID.Text))
+            {
+                TxbValid.Text = "✔ App ID is valid.";
+                BtnSave.IsEnabled = true;
+            }
+            else
+            {
+                TxbValid.Text = "❌ App ID is not valid.";
+                BtnSave.IsEnabled = false;
+            }
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
@@ -32,15 +44,7 @@ namespace Microsoft_Graph_Controls_Sample
 
         private void TxtClientID_TextChanged(object sender, TextChangedEventArgs e)
         {
-           CheckAppID();
-        }
-
-        private void CheckAppID()
-        {
-            // as the user is typing, validate the app id
-            Regex regex = new Regex("([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})");
-
-            if (regex.Match(TxtClientID.Text).Success)
+            if(CheckAppID(TxtClientID.Text))
             {
                 TxbValid.Text = "✔ App ID is valid.";
                 BtnSave.IsEnabled = true;
@@ -49,6 +53,21 @@ namespace Microsoft_Graph_Controls_Sample
             {
                 TxbValid.Text = "❌ App ID is not valid.";
                 BtnSave.IsEnabled = false;
+            }
+        }
+
+        public bool CheckAppID(string txt)
+        {
+            // as the user is typing, validate the app id
+            Regex regex = new Regex("([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})");
+
+            if (regex.Match(txt).Success)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

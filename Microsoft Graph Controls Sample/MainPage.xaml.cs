@@ -52,18 +52,20 @@ namespace Microsoft_Graph_Controls_Sample
         {
             // if the app has no localSettings entry for ClientID, save the ID from App.xaml
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            string currID = "";
+            currID = App.Current.Resources["ida:ClientID"].ToString();
 
             if (localSettings.Values["ClientID"] == null)
             {
-                if (App.Current.Resources["ida:ClientID"].ToString() != null)
+                if (currID != null && (new SettingsPage().CheckAppID(currID)))
                 {
                     NavMain.Header = "";
-                    localSettings.Values["ClientID"] = App.Current.Resources["ida:ClientID"];
+                    localSettings.Values["ClientID"] = currID;
                     initializGraphService();
                 }
                 else
                 {
-                    
+                    NavMain.Header = "⛔Azure App ID not set! Save your app ID before proceeding.⛔";
                     ContentFrame.Navigate(typeof(SettingsPage));
                 }
             }
@@ -147,6 +149,18 @@ namespace Microsoft_Graph_Controls_Sample
                     response = await httpClient.GetAsync(new Uri(mdbase));
                     mdraw = await response.Content.ReadAsStringAsync();
                     break;
+            }
+
+            // if the app ID isn't valid, display an alert here
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            SettingsPage spage = new SettingsPage();
+            if (spage.CheckAppID(localSettings.Values["ClientID"].ToString()))
+            {
+                NavMain.Header = "";
+            }
+            else
+            {
+                NavMain.Header = "⛔Azure App ID not set! Save your app ID before proceeding.⛔";
             }
 
             // clean up the markdown text

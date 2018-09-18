@@ -4,7 +4,7 @@
   <mp:PhoneIdentity PhoneProductId="67645997-5d29-4258-9922-44c6214dc4b1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Microsoft Graph Controls Sample</DisplayName>
-    <PublisherDisplayName>t-chyoon</PublisherDisplayName>
+    <PublisherDisplayName>Microsoft</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
