@@ -14,10 +14,10 @@ The Microsoft Toolkit Graph Controls depend on the [MicrosoftGraphService](https
 4. Once the App is created, copy the Application Id to use it later.
 5. Next, add a Platform to the App clicking in "Add Platform" and select "Native Application" tile.
 6. Scroll to the Microsoft Graph Permissions section (by default the User.Read permission is added). Add the following permissions:
-    >* User.Read
-    >* User.ReadBasic.All
-    >* People.Read
-    >* Files.ReadWrite.All
+    * User.Read
+    * User.ReadBasic.All
+    * People.Read
+    * Files.ReadWrite.All
 7. Finally, save your changes.
 
 ### Extend the UWP app for Azure AD Authentication
@@ -35,7 +35,7 @@ The Microsoft Toolkit Graph Controls depend on the [MicrosoftGraphService](https
 ### Explore the Graph Controls
 
 You can explore the different Graph Controls by clicking on control icons. Detailed documentations for each control can be found here:
->* [AadLogin](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/aadlogin) 
->* [ProfileCard](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/profilecard)
->* [PeoplePicker](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/peoplepicker) 
->* [SharePointFileList](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/sharepointfilelist) 
+* [AadLogin](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/aadlogin) 
+* [ProfileCard](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/profilecard)
+* [PeoplePicker](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/peoplepicker) 
+* [SharePointFileList](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/sharepointfilelist) 
