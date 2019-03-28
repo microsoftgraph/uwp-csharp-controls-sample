@@ -34,13 +34,13 @@ namespace Microsoft_Graph_Controls_Sample
 
         public void initializGraphService()
         {
-            //MicrosoftGraphService.Instance.AuthenticationModel = MicrosoftGraphEnums.AuthenticationModel.V2;
+            MicrosoftGraphService.Instance.AuthenticationModel = MicrosoftGraphEnums.AuthenticationModel.V2;
 
-            //MicrosoftGraphService.Instance.Initialize(
-            //    "e3682a46-6b49-4ac7-8a0c-95aaa745e8c7",
-            //    MicrosoftGraphEnums.ServicesToInitialize.UserProfile,
-            //    Microsoft.Toolkit.Uwp.UI.Controls.Graph.PeoplePicker.RequiredDelegatedPermissions
-            //);
+            MicrosoftGraphService.Instance.Initialize(
+                App.Current.Resources["ida:ClientID"].ToString(),
+                MicrosoftGraphEnums.ServicesToInitialize.UserProfile,
+                Microsoft.Toolkit.Uwp.UI.Controls.Graph.PeoplePicker.RequiredDelegatedPermissions
+            );
         }
 
         public void selectionChanged()

@@ -40,10 +40,10 @@ namespace Microsoft_Graph_Controls_Sample
         public void initializGraphService()
         {
             MicrosoftGraphService.Instance.AuthenticationModel = MicrosoftGraphEnums.AuthenticationModel.V2;
-
+            
             MicrosoftGraphService.Instance.Initialize(
-                ApplicationData.Current.LocalSettings.Values["ClientID"].ToString(),
-                MicrosoftGraphEnums.ServicesToInitialize.UserProfile, 
+                App.Current.Resources["ida:ClientID"].ToString(),
+            MicrosoftGraphEnums.ServicesToInitialize.UserProfile, 
                 new string[] { "User.Read", "User.ReadBasic.All", "People.Read", "Files.ReadWrite.All" }
             );
         }
@@ -55,12 +55,12 @@ namespace Microsoft_Graph_Controls_Sample
             string currID = "";
             currID = App.Current.Resources["ida:ClientID"].ToString();
 
-            if (localSettings.Values["ClientID"] == null)
+            if (localSettings.Values["ida:ClientID"] == null)
             {
                 if (currID != null && (new SettingsPage().CheckAppID(currID)))
                 {
                     NavMain.Header = "";
-                    localSettings.Values["ClientID"] = currID;
+                    localSettings.Values["ida:ClientID"] = currID;
                     initializGraphService();
                 }
                 else
@@ -154,7 +154,7 @@ namespace Microsoft_Graph_Controls_Sample
             // if the app ID isn't valid, display an alert here
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
             SettingsPage spage = new SettingsPage();
-            if (spage.CheckAppID(localSettings.Values["ClientID"].ToString()))
+            if (spage.CheckAppID(localSettings.Values["ida:ClientID"].ToString()))
             {
                 NavMain.Header = "";
             }

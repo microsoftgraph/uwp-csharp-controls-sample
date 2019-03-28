@@ -5,7 +5,6 @@
     xmlns:local="using:Microsoft_Graph_Controls_Sample">
 
     <Application.Resources>
-        <x:String x:Key="ida:ClientID">ENTER_APP_ID</x:String>
+        <x:String x:Key="ida:ClientID">ENTER_APP_ID</x:String>  
     </Application.Resources>
-
 </Application>

@@ -18,7 +18,7 @@ namespace Microsoft_Graph_Controls_Sample
 
             TxtClientID.Focus(FocusState.Programmatic);
 
-            TxtClientID.Text = ApplicationData.Current.LocalSettings.Values["ClientID"].ToString();
+            TxtClientID.Text = App.Current.Resources["ida:ClientID"].ToString();
             if (CheckAppID(TxtClientID.Text))
             {
                 TxbValid.Text = "✔ App ID is valid.";
@@ -35,7 +35,7 @@ namespace Microsoft_Graph_Controls_Sample
         {
             // get the textbox infos
             string NewID = TxtClientID.Text;
-            ApplicationData.Current.LocalSettings.Values["ClientID"] = NewID;
+            App.Current.Resources["ida:ClientID"] = NewID; 
 
             // this doesn't actually work
             // we'll need to use local app data store

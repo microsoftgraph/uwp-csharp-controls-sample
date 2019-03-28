@@ -39,9 +39,7 @@ namespace Microsoft_Graph_Controls_Sample
             ViewTypeControl.Items.Add("SmallProfilePhotoLeft");
             ViewTypeControl.Items.Add("SmallProfilePhotoRight");
             ViewTypeControl.SelectedIndex = 0;
-
             //MultipleSignIn Control
-
         }
 
        

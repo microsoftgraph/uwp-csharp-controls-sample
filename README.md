@@ -6,20 +6,21 @@ This module will introduce you to working with the [Microsoft Graph Controls](ht
 
 The Microsoft Toolkit Graph Controls depend on the [MicrosoftGraphService](https://docs.microsoft.com/en-us/windows/communitytoolkit/services/microsoftgraph) to introduce a layer of abstraction for login authentication. Note that the underlying graph object is the same GraphServiceClient for both the Toolkit and the Graph SDK. For more custom control of graph integration, check out the [Microsoft Graph Training Module - Build UWP apps with the Microsoft Graph .NET SDK](https://github.com/microsoftgraph/msgraph-training-uwp).
 
-### Register the App to use Azure AD v2 Endpoint
+## Register the application 
 
-1. Go to the [App Registration Portal](https://apps.dev.microsoft.com)
-2. Click in the "Add an app" button.
-3. Enter the app name and click "create"
-4. Once the App is created, copy the Application Id to use it later.
-5. Next, add a Platform to the App clicking in "Add Platform" and select "Native Application" tile.
-6. Scroll to the Microsoft Graph Permissions section (by default the User.Read permission is added). Add the following permissions:
-    * User.Read
-    * User.ReadBasic.All
-    * People.Read
-    * Files.ReadWrite.All
-7. Finally, save your changes.
-
+1. Navigate to the [the Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) to register your app. Login using a **personal account** (aka: Microsoft Account) or **Work or School Account**. 
+ 
+2. Select **New registration**. On the **Register an application** page, set the values as follows. 
+ 
+* Set **Name** to UWP Graph Controls Sample App. 
+* Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts**. 
+* Leave **Redirect URI** empty. 
+* Choose **Register**. 
+ 
+3. On the **UWP Graph Controls Sample App** page, copy the values of both the **Application (client) ID** and the **Directory (tenant) ID**. Save these two values, since you will need them later. 
+ 
+4. Select the **Add a Redirect URI** link. On the **Redirect URIs** page, locate the **Suggested Redirect URIs for public clients (mobile, desktop)** section. Select the URI that begins with `msal` **and** the **urn:ietf:wg:oauth:2.0:oob** URI. 
+ 
 ### Extend the UWP app for Azure AD Authentication
 
 1. Open the **App.xaml** file.
