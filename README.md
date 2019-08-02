@@ -1,3 +1,23 @@
+---
+page_type: sample
+products:
+- office-sp
+- office-outlook
+- ms-graph
+languages:
+- windows-uwp
+- csharp
+extensions:
+  contentType: samples
+  technologies:
+  - Microsoft Graph
+  - Microsoft identity platform
+  services:
+  - SharePoint
+  - Outlook
+  - Microsoft identity platform
+  createdDate: 9/5/2018 5:09:42 AM
+---
 # UWP Graph Controls Sample App
 
 This module will introduce you to working with the [Microsoft Graph Controls](https://docs.microsoft.com/en-us/dotnet/api/microsoft.toolkit.uwp.ui.controls.graph?view=win-comm-toolkit-dotnet-stable) ([AadLogin](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/aadlogin), [ProfileCard](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/profilecard), [PeoplePicker](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/peoplepicker), [SharePointFileList](https://docs.microsoft.com/en-us/windows/communitytoolkit/graph/sharepointfilelist)) found in the [Windows Community Toolkit](https://github.com/Microsoft/WindowsCommunityToolkit) in your own UWP application.
