@@ -13,7 +13,7 @@ extensions:
   - Microsoft Graph
   - Microsoft identity platform
   services:
-  - SharePoint
+  - SharePoint 
   - Outlook
   - Microsoft identity platform
   createdDate: 9/5/2018 5:09:42 AM
